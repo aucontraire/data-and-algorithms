@@ -13,17 +13,17 @@ import unittest
 
 
 def palindrome_perm(string):
-    sorted_str = sorted(string.lower().replace(' ', ''))
+    string = string.lower().replace(' ', '')
     seen = set()
-    for c in sorted_str:
+    for c in string:
         if c in seen:
             seen.remove(c)
         else:
             seen.add(c)
 
-    if len(sorted_str) % 2 == 1 and len(seen) == 1:
+    if len(string) % 2 == 1 and len(seen) == 1:
         return True
-    elif len(sorted_str) % 2 == 0 and len(seen) == 0:
+    elif len(string) % 2 == 0 and len(seen) == 0:
         return True
     else:
         return False
